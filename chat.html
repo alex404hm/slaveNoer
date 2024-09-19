@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpgaveWriter - Chat</title>
+    <link rel="stylesheet" href="css/chat.css">
+    <meta name="description" content="Chat med OpgaveWriter for at få hjælp til dine opgaver hurtigt og nemt.">
+    <meta name="keywords" content="OpgaveWriter, AI, chat, opgaver, hjælp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="animated-bg"></div> <!-- Animeret baggrund -->
+
+    <div class="chat-container">
+        <header class="chat-header" aria-label="OpgaveWriter Chat Header">
+            <h2><i class="fas fa-comments" aria-hidden="true"></i> OpgaveWriter Chat</h2>
+        </header>
+
+        <main class="chat-box" id="chatBox" role="log" aria-live="polite" aria-relevant="additions">
+            <!-- Chatbeskeder vises her -->
+        </main>
+
+        <footer class="chat-input">
+            <input type="text" id="userInput" placeholder="Skriv din besked her..." aria-label="Skriv din besked her" />
+            <button id="sendBtn" aria-label="Send besked"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send</button>
+        </footer>
+    </div>
+
+    <!-- Pop-up boks -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h3>Skriv om et tilfældigt emne!</h3>
+            <p>Indtast en tekst om et emne, f.eks. "Min yndlingsfilm" eller "Hvordan jeg tilbringer min weekend".</p>
+            <textarea id="popupInput" placeholder="Skriv din tekst her..."></textarea>
+            <div class="popup-buttons">
+                <button id="submitPopup">Indsend</button>
+                <button id="closePopup">Luk</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>
