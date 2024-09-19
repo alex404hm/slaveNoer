@@ -9,106 +9,237 @@
     <meta name="description" content="Optimer dine opgaver med hjælp fra en intelligent AI-assistent. Få AI-genererede forslag, optimer din skrivestil, og få dine opgaver til at skinne som aldrig før.">
     <meta name="keywords" content="OpgaveMaster, AI, opgaver, skrivestil, optimering, assistance, læring">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
 </head>
 <body>
+    <div class="background-animation"></div>
 
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="navbar-logo">
-            <a href="index.html">OpgaveMaster</a>
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">OpgaveMaster</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar-links" role="navigation">
+                <li><a href="#home">Hjem</a></li>
+                <li><a href="#features">Funktioner</a></li>
+                <li><a href="#pricing">Priser</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#" class="cta-btn">Log ind</a></li>
+            </ul>
         </div>
-        <ul class="navbar-links">
-            <li><a href="#">Hjem</a></li>
-            <li><a href="#features">Funktioner</a></li>
-            <li><a href="#pricing">Priser</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-section">
-        <h1>Velkommen til OpgaveMaster</h1>
-        <p>Optimer dine opgaver med hjælp fra en intelligent AI-assistent. Få AI-genererede forslag, optimer din skrivestil, og få dine opgaver til at skinne som aldrig før.</p>
-        <a href="chat.html" class="button-9">Start Chat</a>
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Velkommen til OpgaveMaster</h1>
+            <p>Optimer dine opgaver med hjælp fra en intelligent AI-assistent. Få AI-genererede forslag, optimer din skrivestil, og få dine opgaver til at skinne som aldrig før.</p>
+            <div class="cta-buttons">
+                <a href="chat.html" class="button-9">Start Chat</a>
+                <a href="#features" class="button-9 secondary">Lær mere</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Funktioner Section -->
+    <!-- Features Section -->
     <section id="features" class="features-section">
         <h2>Vores Funktioner</h2>
         <div class="features-cards-container">
             <div class="feature-card">
-                <div class="feature-icon">⚙️</div>
+                <div class="feature-icon"><i class="fas fa-robot"></i></div>
                 <h3>AI-genererede Opgaveforslag</h3>
                 <p>Få skræddersyede forslag til dine opgaver baseret på avancerede AI-algoritmer.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">✍️</div>
+                <div class="feature-icon"><i class="fas fa-pen-fancy"></i></div>
                 <h3>Optimering af Skrivestil</h3>
                 <p>Forbedr din skrivestil med intelligente forslag og feedback.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📈</div>
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                 <h3>Effektiv Feedback</h3>
                 <p>Modtag detaljeret feedback for at forbedre dine opgaver.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">📊</div>
+                <div class="feature-icon"><i class="fas fa-brain"></i></div>
                 <h3>Forudsigelse af Sværhedsgrad</h3>
                 <p>Få en vurdering af opgavens sværhedsgrad for bedre planlægning.</p>
             </div>
         </div>
     </section>
 
-    <!-- Priser Section -->
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section">
+        <h2>Sådan fungerer det</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-upload"></i></div>
+                <h3>Upload din opgave</h3>
+                <p>Del din opgave eller dit udkast med OpgaveMaster.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                <h3>AI-analyse</h3>
+                <p>Vores AI analyserer din tekst og genererer forslag.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                <h3>Modtag feedback</h3>
+                <p>Få detaljeret feedback og forbedringsforslag.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-pencil-alt"></i></div>
+                <h3>Revider og forbedr</h3>
+                <p>Implementer forslagene og optimer din opgave.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
     <section id="pricing" class="pricing-section">
         <h2>Vores Priser</h2>
         <p>Vælg den pakke, der passer bedst til dine behov:</p>
         <div class="pricing-cards">
             <div class="pricing-card">
-                <h3>Gratis Plan</h3>
-                <p>Få basale AI-forslag</p>
-                <p class="price">0 DKK/måned</p>
+                <div class="pricing-header">
+                    <h3>Gratis Plan</h3>
+                    <p class="price">0 DKK<span>/måned</span></p>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Basale AI-forslag</li>
+                    <li><i class="fas fa-check"></i> Begrænset antal opgaver</li>
+                    <li><i class="fas fa-times"></i> Avanceret skrivestilsoptimering</li>
+                    <li><i class="fas fa-times"></i> Prioriteret support</li>
+                </ul>
+                <a href="#" class="cta-btn-pricing">Vælg Plan</a>
+            </div>
+            <div class="pricing-card popular">
+                <div class="popular-badge">Populær</div>
+                <div class="pricing-header">
+                    <h3>Pro Plan</h3>
+                    <p class="price">99 DKK<span>/måned</span></p>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Ubegrænsede AI-forslag</li>
+                    <li><i class="fas fa-check"></i> Ubegrænset antal opgaver</li>
+                    <li><i class="fas fa-check"></i> Avanceret skrivestilsoptimering</li>
+                    <li><i class="fas fa-check"></i> Prioriteret support</li>
+                </ul>
                 <a href="#" class="cta-btn-pricing">Vælg Plan</a>
             </div>
             <div class="pricing-card">
-                <h3>Pro Plan</h3>
-                <p>Ubegrænsede AI-forslag og skrivestilsoptimering</p>
-                <p class="price">99 DKK/måned</p>
-                <a href="#" class="cta-btn-pricing">Vælg Plan</a>
-            </div>
-            <div class="pricing-card">
-                <h3>Enterprise Plan</h3>
-                <p>Avancerede AI-forslag og skræddersyet assistance</p>
-                <p class="price">299 DKK/måned</p>
-                <a href="#" class="cta-btn-pricing">Vælg Plan</a>
+                <div class="pricing-header">
+                    <h3>Enterprise Plan</h3>
+                    <p class="price">299 DKK<span>/måned</span></p>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class="fas fa-check"></i> Alt i Pro Plan</li>
+                    <li><i class="fas fa-check"></i> Skræddersyede AI-modeller</li>
+                    <li><i class="fas fa-check"></i> Dedikeret account manager</li>
+                    <li><i class="fas fa-check"></i> API-adgang</li>
+                </ul>
+                <a href="#" class="cta-btn-pricing">Kontakt os</a>
             </div>
         </div>
     </section>
 
-    <!-- Kontakt Section -->
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <h2>Hvad vores brugere siger</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <img src="/api/placeholder/100/100" alt="User Avatar" class="testimonial-avatar" loading="lazy">
+                <p class="testimonial-text">"OpgaveMaster har revolutioneret måden, jeg skriver mine opgaver på. Det er som at have en personlig tutor døgnet rundt!"</p>
+                <p class="testimonial-author">- Maria J., Universitetsstuderende</p>
+            </div>
+            <div class="testimonial">
+                <img src="/api/placeholder/100/100" alt="User Avatar" class="testimonial-avatar" loading="lazy">
+                <p class="testimonial-text">"Jeg har set en markant forbedring i mine karakterer siden jeg begyndte at bruge OpgaveMaster. Det er et must-have værktøj for enhver seriøs studerende."</p>
+                <p class="testimonial-author">- Anders P., Gymnasieelev</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <h2>Kontakt Os</h2>
         <p>Har du spørgsmål eller brug for hjælp? Kontakt vores support team.</p>
-        <form>
-            <input type="text" name="name" placeholder="Dit navn" required>
-            <input type="email" name="email" placeholder="Din email" required>
-            <textarea name="message" placeholder="Din besked" required></textarea>
-            <button type="submit" class="button-9">Send Besked</button>
-        </form>
+        <div class="contact-container">
+            <form class="contact-form" aria-label="Contact Form">
+                <div class="form-group">
+                    <label for="name">Dit navn</label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">Din email</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="message">Din besked</label>
+                    <textarea id="message" name="message" required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="button-9">Send Besked</button>
+            </form>
+            <div class="contact-info">
+                <h3>Kontaktinformation</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Nørregade 123, 1150 København K</p>
+                <p><i class="fas fa-phone"></i> +45 12 34 56 78</p>
+                <p><i class="fas fa-envelope"></i> info@opgavemaster.dk</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <ul class="footer-links">
-            <li><a href="#">Om Os</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li><a href="#terms">Vilkår for Brug</a></li>
-            <li><a href="#privacy">Privatlivspolitik</a></li>
-        </ul>
-        <p>© 2024 OpgaveMaster | <a href="#">Privatlivspolitik</a> | <a href="#">Vilkår</a></p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Om OpgaveMaster</h3>
+                <p>Vi er dedikerede til at hjælpe studerende med at forbedre deres akademiske præstationer gennem avanceret AI-teknologi.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hurtige Links</h3>
+                <ul>
+                    <li><a href="#home">Hjem</a></li>
+                    <li><a href="#features">Funktioner</a></li>
+                    <li><a href="#pricing">Priser</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Juridisk</h3>
+                <ul>
+                    <li><a href="#terms">Vilkår for Brug</a></li>
+                    <li><a href="#privacy">Privatlivspolitik</a></li>
+                    <li><a href="#cookies">Cookie Politik</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Nyhedsbrev</h3>
+                <p>Tilmeld dig vores nyhedsbrev for at få de seneste opdateringer og tilbud.</p>
+                <form class="newsletter-form" aria-label="Newsletter Form">
+                    <input type="email" placeholder="Din email" required aria-required="true">
+                    <button type="submit">Tilmeld</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 OpgaveMaster. Alle rettigheder forbeholdes.</p>
+        </div>
     </footer>
 
+    <script src="js/script.js" defer></script>
 </body>
 </html>
