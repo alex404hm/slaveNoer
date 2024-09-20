@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Montserrat:wght@400;700&display=swap');
+
+/* Grundlæggende styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0e1621; /* Mørkeblå baggrund */
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Forhindrer scrollbar */
+    position: relative;
+}
+
+/* Animeret baggrund */
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 31, 63, 0.9), rgba(0, 123, 255, 0.9)), url('https://source.unsplash.com/featured/?ai,technology');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: moveBackground 20s infinite linear;
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* ChatUI Container */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    max-width: 900px;
+    height: 90vh;
+    padding: 20px;
+    background-color: rgba(10, 25, 47, 0.95);
+    border-radius: 20px; /* Mere moderne afrunding */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Chat Header */
+.chat-header {
+    background-color: #007bff; /* Primær farve for header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px; /* Større skrifttype */
+    font-weight: 500;
+    border-radius: 20px 20px 0 0; /* Afrundede hjørner øverst */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat Box */
+.chat-box {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: rgba(15, 30, 50, 0.8);
+    border-radius: 0 0 20px 20px; /* Afrundede hjørner i bunden */
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); /* Indre skygge */
+}
+
+/* Beskeder */
+.message {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 12px;
+    max-width: 75%; /* Begrænset bredde */
+    animation: fadeIn 0.3s ease;
+    position: relative; /* For skygger */
+}
+
+.ai-message {
+    background-color: #007bff; /* AI-besked farve */
+    color: white;
+    text-align: left;
+    border-left: 4px solid #00aaff; /* Tydelig markering */
+    margin-right: auto; /* Juster til venstre */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Let skygge */
+}
+
+.user-message {
+    background-color: #1e2a38; /* Brugerbesked farve */
+    color: white;
+    text-align: right;
+    margin-left: auto; /* Juster til højre */
+    border-right: 4px solid #005bb5; /* Tydelig markering */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Let skygge */
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    width: 100%;
+    padding: 15px;
+    background-color: #16213e;
+    border-top: 2px solid #273549;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #273549;
+    border-radius: 8px;
+    background-color: #0d1b2a; /* Input baggrund */
+    color: #ffffff;
+    margin-right: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.chat-input input:focus {
+    outline: none;
+    border-color: #007bff; /* Skift farve ved fokus */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Blå skygge ved fokus */
+}
+
+/* Chat Input Button */
+.chat-input button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.chat-input button:hover {
+    background-color: #005bb5; /* Mørkere blå ved hover */
+    transform: scale(1.05); /* Let skala-effekt ved hover */
+}
+
+/* CSS til pop-up boks */
+.popup {
+    display: none; /* Skjul som standard */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(20, 30, 40, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup h3 {
+    color: #ffffff; /* Titel farve */
+}
+
+.popup p {
+    color: #b3b3b3; /* Grå tekst for beskrivelse */
+    text-align: center;
+}
+
+.popup textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #005bb5;
+    border-radius: 8px;
+    margin: 10px 0;
+    background-color: #1e2a38; /* Input baggrund */
+    color: #ffffff;
+}
+
+/* Pop-up knapper */
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.popup button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Fælles plads for knapper */
+}
+
+.popup button:hover {
+    background-color: #005bb5; /* Mørkere blå ved hover */
+}
+
+/* Responsiv tilpasning */
+@media only screen and (max-width: 768px) {
+    .chat-header {
+        font-size: 20px; /* Mindre skrifttype for mobil */
+    }
+
+    .chat-box {
+        font-size: 14px; /* Mindre tekststørrelse */
+    }
+
+    .chat-input input {
+        padding: 10px; /* Mindre padding */
+    }
+
+    .chat-input button {
+        padding: 10px 15px; /* Mindre padding */
+        font-size: 14px; /* Mindre tekststørrelse */
+    }
+
+    .popup {
+        width: 95%; /* Bredere popup til mobil */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .chat-header {
+        font-size: 18px; /* Mindre skrifttype for meget små skærme */
+    }
+
+    .chat-box {
+        font-size: 12px; /* Mindre tekststørrelse */
+    }
+}
+
+/* Animation til beskeder */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
